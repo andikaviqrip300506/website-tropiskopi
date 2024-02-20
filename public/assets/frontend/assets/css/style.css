@@ -1,0 +1,1538 @@
+/* My Fonts */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@700&family=Nunito+Sans:opsz@6..12&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    height: 100%;
+}
+
+/*---------------------------------------- Navbar ----------------------------------------------*/
+
+nav {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    display: flex;
+    transition: top 0.3s ease-in-out;
+    z-index: 1000;
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav.opened {
+    display: none;
+}
+
+nav .nav-media {
+    line-height: 50px;
+    margin-left: 120px;
+    cursor: pointer;
+}
+
+nav .nav-media img {
+    width: 20px;
+    height: 20px;
+}
+
+nav .nav-logo {
+    line-height: 50px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+nav .nav-logo img {
+    width: 90px;
+    height: 90px;
+}
+
+/* Navbar Toggle Menu */
+
+nav .toggle-menu .btn-menu2 {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    margin-right: 90px;
+}
+
+/* Hero Toggle Menu */
+
+.hero .toggle-menu .btn-menu {
+    background-color: transparent;
+    z-index: 99;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    margin-right: 15px;
+}
+
+.line {
+    fill: none;
+    stroke: rgb(0, 0, 0);
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lineNav {
+    fill: none;
+    stroke: rgb(0, 0, 0);
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 5;
+}
+
+.line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 5;
+}
+
+.line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 5;
+}
+
+.opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 5;
+}
+
+.opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 5;
+}
+
+.opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 5;
+}
+
+/*---------------------------------------- Menu Animation ----------------------------------------------*/
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9999;
+    overflow: hidden;
+    animation: slideIn 0.5s ease-out, slideOut 0.5s ease-in; 
+}
+  
+.menu-overlay.opened {
+    animation: slideIn 0.5s ease-out; 
+}
+
+.menu-overlay.closing {
+    animation: slideOut 0.5 ease-in;
+}
+
+.menu-overlay button {
+    position: absolute;
+    background-color: transparent;
+    right: 6.7%;
+    top: 5.5%;
+    z-index: 9999;
+}
+
+.menu-logo {
+    margin-top: -3rem;
+    margin-bottom: 6rem;
+}
+
+.menu-logo img{
+    width: 100px;
+    height: 60px;
+}
+
+.menu-content {
+    position: relative;
+    top: 50%;
+    font-size: 30px;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.menu-content a {
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: black;
+}
+
+.menu-content a:before {
+    content: "";
+    position: absolute;
+    top: 60%;
+    height: 2px;
+    width: 100%;
+    background-color: #42a3a5;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3 ease;
+}
+
+.menu-content a:hover:before {
+    transform: scaleX(1);
+}
+
+.menu-content ul {
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+}
+  
+.menu-content li {
+    margin: 15px 0;
+}
+
+.menu-content a:hover {
+    color: #000000;
+}
+
+
+.opened .bars:before {
+    transform: translateY(8px) rotate(-90deg);
+}
+
+.opened .bars:after {
+    transform: translateY(-8px) rotate(-90deg);
+}
+  
+@keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+}
+    to {
+      transform: translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+/*---------------------------------------- Hero Section ----------------------------------------------*/
+
+.hero {
+    background-image: url("../img/hero-bga.png");
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+    width: 100%;
+    margin: 0;
+    height: 700px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed;
+}
+
+.hero::after {
+    content: "";
+    bottom: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 1) 8%,
+        rgba(255, 255, 255, 0) 45%
+    );
+}
+
+.hero .container {
+    width: 100%;
+    height: 700px;
+}
+
+.hero .nav-container {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero .logo-hero {
+    line-height: 100px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.hero .logo-hero img {
+    width: 140px;
+    height: 130px;
+}
+
+.hero .media-hero {
+    margin-left: 20px;
+}
+
+.hero .media-hero img {
+    width: 25px;
+    height: 25px;
+}
+
+/* Hero Text */
+
+.hero .text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .text-container .text-hero h2 {
+    font-family: "M PLUS 1", sans-serif;
+    color: white;
+    line-height: 400px;
+    font-size: 60px;
+}
+
+.hero .text-container .text-hero span {
+    color: #42a3a5;
+}
+
+/*---------------------------------------- Hero Parallax ----------------------------------------------*/
+
+.hero .hero-parallax {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: -17rem;
+}
+
+.hero .hero-parallax img {
+    width: 300px;
+    height: 300px;
+    transition: transform 0.2s ease-out;
+}
+
+/*---------------------------------------- About Section ----------------------------------------------*/
+
+.about {
+    margin: 200px 90px;
+    position: relative;
+    z-index: -1;
+}
+
+.about .about-container {
+    position: relative;
+    height: 627px;
+    display: grid;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    grid-template-areas:
+        "decor decor"
+        "about image"
+        "decor2 decor2";
+}
+
+.about .about-image {
+    grid-area: image;
+}
+
+.about .about-image img {
+    position: relative;
+    z-index: 11;
+    width: 300;
+    height: 626;
+}
+
+.about .about-text {
+    grid-area: about;
+    padding: 1rem;
+}
+
+.about .deco-image {
+    position: absolute;
+    overflow: hidden;
+    z-index: 99;
+    width: 300px;
+    height: 100vh;
+    grid-area: decor;
+    right: 0;
+    top: 0;
+    margin-top: -3rem;
+    margin-right: -6.5rem;
+}
+
+.about .deco-image img { 
+    transition: transform 0.3s ease-out;
+}
+
+.about .deco-image-2 {
+    position: absolute;
+    z-index: 10;
+    grid-area: decor2;
+    top: -4.5rem;
+    right: 13rem;
+    bottom: 0;
+}
+
+.about .deco-image-2 img {
+    transition: transform 0.3s ease-out;
+}
+
+
+.about .about-text h2 {
+    font-family: "M PLUS 1", sans-serif;
+    display: none;
+}
+
+.about .about-text .text-us {
+    font-family: "M PLUS 1", sans-serif;
+    color: #42a3a5;
+    font-weight: bold;
+}
+
+.about .about-text .text-des {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1.3rem;
+}
+
+.about .about-text .buy-now {
+    font-family: 'Nunito Sans', sans-serif;
+    margin-top: 1rem;
+    background-color: #42a3a5;
+    color: white;
+    width: 100px;
+    height: 35px;
+    font-size: 12px;
+}
+
+/*---------------------------------------- Products Section ----------------------------------------------*/
+
+.product h2 {
+    font-family: 'M PLUS 1', sans-serif;
+    margin-left: -53rem;
+    font-size: 40px;
+}
+
+.product h6 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+}
+
+
+  
+/*---------------------------------------- Testimoni Section ----------------------------------------------*/
+
+.destroy {
+    overflow: hidden;
+    height: 50rem;
+}
+
+.testimoni {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/testimoni2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 26rem;
+    margin-top: 20rem;
+
+}
+
+.testimoni .testi-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10rem;
+}
+
+
+.testimoni .testi-text {
+    margin-left: -2rem;
+    width: 500px;
+    height: 200px;
+    padding: 3rem;
+    background-color: white;
+    transform: translateX(0);
+    transition: transform 0.5s ease-out;
+}
+
+
+/*---------------------------------------- Locations Section ----------------------------------------------*/
+.locations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15rem;
+    position: relative;
+    z-index: -1;
+}
+
+.locations .locations-container {
+    display: flex;
+}
+
+.locations .locations-deco {
+    position: absolute;
+    z-index: 1;
+    margin-top: 21.5rem;
+    left: 0;
+    transition: transform 0.3s ease-out;
+}
+
+.locations .locations-text {
+    margin: 13rem 11rem 1rem 1rem;
+    position: relative;
+    z-index: 2;
+    font-family: 'M PLUS 1', sans-serif;
+    width: 500px;
+}
+
+.locations .locations-text h2 {
+    font-size: 40px;
+    margin-bottom: 3rem;
+}
+
+.locations .locations-text .text-loc {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.locations .locations-text .text-ons {
+    color: #42a3a5;
+}
+
+
+/*---------------------------------------- Services Section ----------------------------------------------*/
+
+.services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 10rem;
+}
+
+.services .services-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-left: 0.5rem;
+    padding: 0;
+}
+
+.services .services-image {
+    margin-top: 3rem;
+    display: flex;
+}
+
+.services .services-image img {
+    margin: 1.5rem;
+    transition: 0.5s ease-out;
+}
+
+.services .image-with-text {
+    position: relative;
+    overflow: hidden;
+}
+
+.services .image-with-text .logo{
+    width: 50px;
+    height: 20px;
+}
+
+.services .image-text {
+   position: absolute;
+   top: 70%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: rgb(0, 0, 0);
+   text-align: center;
+   font-size: 18px; 
+   font-family: 'M PLUS 1', sans-serif; 
+   opacity: 0;
+   transition: opacity 0.3s ease-in-out;
+   background-color: rgb(255, 255, 255);
+   border: 1px solid #42a3a5;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.services .services-blue {
+    color: #42a3a5;
+}
+
+.services .services-head { 
+    position: absolute;
+    margin-top: -3rem;
+    margin-left: 1rem;
+    top: 0;
+    left: 0;
+}
+
+.services .image-with-text:hover .image-text {
+    top: 50%;
+    opacity: 1;
+}
+
+
+
+.services .image-with-text::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    z-index: -1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.services .image-with-text:hover::before {
+   transform: translateY(-100%);
+}
+ 
+
+.services .services-head h2 {
+    font-family: 'M PLUS 1', sans-serif;
+    font-size: 40px;
+}
+
+.services .services-head .text-services {
+    color: #42a3a5;
+}
+
+/*---------------------------------------- Decor Section ----------------------------------------------*/
+
+.decoration {
+    background-image: url(../img/decor2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    max-width: 100%;
+    height: 400px;
+    margin-top: 15rem;
+}
+
+.decoration .decoration-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.decoration .decoration-container button {
+    font-family: 'Nunito Sans', sans-serif;
+    width: 120px;
+    font-size: 15px;
+    height: 50px;
+    background-color: #42a3a5;
+    color: white;
+}
+
+.decoration .decoration-container img {
+    margin-top: -3rem;
+    width: 300px;
+    height: 300px;
+}
+
+#buyButton {
+    transition: transform 0.3s ease-in-out;
+}
+  
+.shake {
+    animation: shake 0.9s ease-in-out;
+}
+  
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+    }
+  25% {
+    transform: translateX(-5px);
+}
+  50% {
+    transform: translateX(5px);
+}
+  75% {
+    transform: translateX(-5px);
+}
+}
+
+
+/*---------------------------------------- Social Section ----------------------------------------------*/
+
+.social {
+    margin-top: 12rem;
+}
+
+.social .social-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.social .social-container img {
+    width: 200px;
+    height: 80px;
+}
+
+.social .social-container h2 {
+    font-family: 'Nunito Sans', sans-serif;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.social .social-container .text-us {
+    color: #42a3a5;
+}
+
+.social .social-animation {
+    border: 1px solid gray;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.social .social-animation span {
+    display: block;
+    background: #42a3a5;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transform: rotate(45deg) scale(1);
+    transform-origin: 100% 20%;
+}
+
+.social .social-animation .element-animation {
+    animation: animationframes linear 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animationframes {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*---------------------------------------- Footer Section ----------------------------------------------*/
+
+footer {
+    text-align: center;
+    padding: 8.5rem;
+    position: relative;
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0, 0.2);
+    height: 400px;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+footer .footer-logo img {
+    height: 50px;
+    margin-right: 0.7rem;
+}
+
+footer .footer-menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: #42a3a5;
+    justify-content: center;
+    margin: 0.7rem 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+footer .footer-menu a {
+    text-align: left;
+    margin: 0 1rem;
+}
+
+footer .footer-email, .footer-wa {
+    font-family: 'Nunito Sans', sans-serif;
+    margin-top: -4rem;
+}
+
+footer .footer-email h3 {
+    color: #42a3a5;
+    text-align: left;
+}
+
+footer .footer-menu a {
+    text-decoration: none;
+    color: black;
+}
+
+footer .logo-wa {
+    display: flex;
+    margin-left: -5rem;
+}
+
+footer .footer-wa h3 {
+    color: #42a3a5;
+}
+
+footer .footer-wa .logo-wa {
+    margin-left: 1rem;
+}
+
+footer .footer-wa img {
+    height: 20px;
+    margin-right: 0.3rem;
+}
+
+.footer-deco {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #42a3a5;
+}
+
+.footer-deco p {
+    color: white;
+    font-size: 10px;
+    margin-top: 1rem;
+}
+
+
+/*---------------------------------------- Contact Section ----------------------------------------------*/
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -1rem;
+}
+
+.contact-container img {
+    width: 160px;
+    height: 150px;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 130px 0;
+}
+
+.contact-container {
+    display: flex;
+    grid-template-areas: "nama wa"
+                         "product jumlah";
+}
+
+.purchase-nama {
+    grid-area: nama;
+}
+
+.purchase-wa {
+    grid-area: wa;
+}
+
+.purchase-product {
+    grid-area: product;
+}
+
+.purchase-jumlah {
+    grid-area: jumlah;
+}
+
+.contact .heading h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+
+}
+
+.contact .heading h2 span {
+    color: #ff9100;
+}
+
+.contact .heading p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #999999;
+    margin: 20px 0 60px;
+    padding: 0;
+}
+
+.contact .form-control {
+    padding: 25px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border: 0;
+    border-radius: 10px;
+}
+
+.contact button.btn {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #ff9100;
+    color: #ffffff;
+}
+
+.contact .title h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contact .title p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #999;
+    line-height: 1.6;
+    margin: 0 0 40px;
+}
+
+.contact .content .info {
+    margin-top: 30px;
+}
+.contact .content .info i {
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    color: #02434b;
+    margin-right: 20px;
+    text-align: center;
+    width: 20px;
+}
+.contact .content .info h4 {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.contact .content .info h4 span {
+    font-size: 13px;
+    font-weight: 300;
+    color: #999999;
+}
+
+/*---------------------------------------- Responsive Breakpoint ----------------------------------------------*/
+
+/* Laptop */
+@media (max-width: 1200px) {
+    html {
+        font-size: 75%;
+    }
+
+    /* Product Laptop */
+    .product .product-item img {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Testimoni Laptop */
+    .testimoni .testi-image img {
+        width: 400px;
+        height: 350px;
+        margin-left: 5rem;
+    }
+
+    .testimoni .testi-text {
+        width: 500px;
+        height: 200px;
+        padding: 5rem;
+    }
+
+    /* Locations Laptop */
+    .locations {
+        padding: 10rem;
+    }
+
+    .locations .locations-container  {
+        width: 800px;
+    }
+
+    .locations .locations-deco {
+        margin-top: 14rem;
+    }
+
+    .locations .locations-text {
+        margin-top: 18rem;
+        width: 450px;
+    }
+
+    /* Services Laptop */
+    .services .services-image {
+        margin-top: 2.5rem;
+    }
+
+    .services .services-image img {
+        margin: 1rem;
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+    /* About Tablet */
+    .about {
+        margin: 400px 0 300px 10px;
+    }
+    .about .about-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about .about-image img {
+        height: 732px;
+    }
+
+    .about .about-text {
+        width: 450px;
+        margin-top: 30px;
+        margin-left: 15px;
+        position: relative;
+        z-index: 20;
+    }
+
+    .about .deco-image {
+        width: 300px;
+        margin-right: 0em;
+        top: 0;
+        margin-top: -17em;
+    }
+
+    .about .deco-image-2 {
+        left: 0;
+        top: 54em;
+    }
+
+    .about .deco-image-2 img {
+      width: 300px;
+      height: 150px;
+
+    }
+
+    .about .about-text h2 {
+        display: block;
+        margin-top: -0.4em;
+        font-size: 20px;
+    }
+
+    .about .about-text .text-des {
+        display: inline-block;
+        margin-top: 5em;
+        font-size: 10px;
+    }
+
+    /* Product Tablet */
+    .product .grid-product {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.2rem;
+        margin-left: 3.8rem;
+    }
+
+    .product .head {
+        font-size: 20px;
+    }
+
+    .product .product-item {
+        font-size: 15px;
+    }
+
+    .product .product-item:hover {
+         filter: grayscale(1);
+    }
+    
+    .product .product-item img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .product .product-item .p3 {
+        display: none;
+    }
+
+    /* Testimoni Tablet */
+    .testimoni .testi-image {
+        margin-left: 5rem;
+    }
+
+    .testimoni .testi-image img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .testimoni .testi-text {
+        width: 400px;
+        height: 150px;
+        margin-right: 5rem;
+    }
+
+    /* Locations Tablet */
+    .locations {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .locations .locations-container {
+        flex-direction: column-reverse;
+        width: 500px;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .locations .locations-deco {
+        margin-top: 75rem;
+        width: 717px;
+    }
+
+    .locations .locations-deco img  {
+        width: 100%;
+        height: 200px;
+    }
+
+    .locations .locations-text {
+        width: 450px;
+        margin: 0;
+    }
+
+    .locations .locations-text h2 {
+        font-size: 20px;
+        margin-top: 2rem;
+    }
+
+    .locations .locations-text p {
+        font-size: 10px;
+    }
+
+    .locations .locations-image {
+        margin: 0;
+    }
+
+    .locations .locations-image img {
+        position: relative;
+        z-index: 2;
+        width: 411px;
+        height: 732px;
+    }
+
+    /* Services Tablet */
+    .services {
+        margin-top: 0;
+        flex-direction: column;
+    }
+
+    .services .services-container {
+        flex-direction: column;
+    }
+
+    .services .services-image {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .services .services-image img {
+        width: 411px;
+    }
+
+    .services .services-head h2 {
+        font-size: 20px;
+    }
+
+    /* Footer Tablet */
+    footer {
+        padding: 1rem;
+    }
+
+    /* Parallax Tablet */
+    .hero .hero-parallax img {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Decoration Tablet */
+    .decoration {
+        margin-top: 35rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+
+    /* Navbar Mobile */
+    nav .nav-media {
+        margin-left: 6.5rem;
+    }
+
+    nav .nav-logo {
+        margin-left: 1rem;
+    }
+
+    nav .toggle-menu {
+        margin-right: -5rem;
+    }
+
+    /* Hero Mobile */
+    .hero .text-container .text-hero h2 {
+        font-size: 50px;
+    }
+
+
+    /* About Mobile */
+    .about .about-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about .about-text {
+        display: block;
+        width: 310px;
+    }
+
+    .about .deco-image {
+     margin-top: -11em;
+    }
+
+    .about .deco-image-2 img {
+      margin-top: -10em;
+    }
+
+    .about .about-image img {
+        width: 370px;
+        height: 550px;
+    }
+
+    .about .about-text h2 {
+        display: block;
+        font-size: 24px;
+        margin-left: -40px;
+    }
+
+    .about .about-text .text-des p {
+        font-size: 16px;
+        text-align: left;
+        margin-top: -20px;
+        margin-left: -40px;
+    }
+
+    .about .buy-now {
+        margin-left: -40px;
+    }
+
+    /* Product Mobile */   
+    .product {
+        padding: 0;
+        margin: 0;
+        gap: 0;
+    }
+
+    .product .grid-product {
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: -12rem;
+        margin-right: 40px;
+        overflow: hidden;
+    }
+
+    .product .head {
+        font-size: 30px;
+    }
+    
+    .product .product-item {
+        overflow: hidden;
+        margin-right: 20px;
+    }
+
+    
+    .product .product-item p {
+        font-size: 25px;
+    }
+
+    .product .product-item img {
+        width: 360px;
+        height: 330px;
+    }
+
+    .product .product-item:hover:after {
+        left: 50%;
+    }
+
+    .product .product-item .p2 {
+        display: none;
+    }
+
+    .product .product-item img::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(169, 169, 169, 1);
+        z-index: 99;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+      
+      .product .product-item:hover img::before {
+        opacity: 0; /* Ubah menjadi 0 atau hapus elemen ::before ini */
+      }
+
+    /* Testimoni Mobile */
+    .testimoni {
+        flex-direction: column;
+        margin-top: 25rem;
+    }
+
+    .testimoni .testi-container {
+        flex-direction: column;
+    }
+
+    .testimoni .testi-text {
+        margin-top: -60px;
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 0;
+        width: 360px;
+        height: 10px;
+    }
+
+    .testimoni .testi-text p {
+        font-size: 10px;
+        width: 200px;
+        margin-top: -3rem;
+    }
+
+    .testimoni .testi-image {
+        margin-top: -13rem;
+        margin-left: 0;
+    }
+
+    .testimoni .testi-image img {
+        width: 360px;
+        height: 300px;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Locations Mobile */
+    .locations {
+        overflow: hidden;
+    }
+
+    .locations .locations-deco {
+        width: 415px;
+        margin-top: 81.5rem;
+    }
+
+    .locations .locations-image img {
+        width: 360px;
+        height: 550px;
+    }
+
+    .locations .locations-text {
+        margin-left: -20px;
+        width: 319px;
+    }
+
+    .locations .locations-text h2 {
+        font-size: 26px;
+        text-align: left;
+    }
+
+    .locations .locations-text p {
+        text-align: left;
+        font-size: 16px;
+    }
+
+    /* Services Mobile */
+    .services {
+        margin-top: 19rem;
+    }
+
+    .services .services-image img {
+        margin-top: 7rem;
+        width: 325px;
+    }
+
+    .services .services-head h2 {
+        font-size: 25px;
+        margin-bottom: 10rem;
+    }
+
+    /* Decoration Mobile */
+    .decoration .decoration-container button {
+        font-size: 10px;
+    }
+
+    .decoration .decoration-container .buy-now {
+        font-size: 16px;
+    }
+
+    /* Social Mobile */
+    .social .social-container h2 {
+        font-size: 24px;
+    }
+
+    /* Footer Mobile */
+    footer {
+        margin: 0;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+    }
+
+    footer .footer-email{
+        position: absolute;
+        left: 10%;
+        bottom: 25%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    footer .footer-menu h3 {
+        font-size: 20px;
+    }
+
+    footer .footer-email h3 {
+        font-size: 20px;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    footer .footer-email p {
+        font-size: 16px;
+    }
+
+    footer .footer-menu {
+        margin-top: 3rem;
+    }
+
+    footer .footer-menu a {
+        font-size: 16px;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    footer .footer-wa {
+        position: absolute;
+        right: 10%;
+        bottom: 25%;
+        margin-top: 1rem;
+        padding: 0;
+    }
+
+    footer .footer-wa p {
+        font-size: 16px;
+    }
+
+    footer .footer-wa h3 {
+        font-size: 20px;
+    }
+
+    footer .footer-wa h3, p {
+        text-align: center;
+    }
+
+    footer .logo-wa {
+        justify-content: center;
+        align-items: center;
+        margin-right: 2rem;
+    }
+
+    footer .logo-wa img {
+        margin-top: -1rem;
+        width: 20px;
+        height: 20px;
+    }
+
+    .footer-deco {
+        margin: 0;
+    }
+
+    /* Parallax Mobile */
+    .hero .hero-parallax img {
+        margin-top: -35rem;
+        width: 300px;
+        height: 300px;
+    }
+
+}
+
+
+/*---------------------------------------- END ALL STYLES ----------------------------------------------*/
+
+/*---------------------------------------- *ANDIKA* ----------------------------------------------*/
